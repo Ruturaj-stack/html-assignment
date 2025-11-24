@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Positioning Assignment</title>
+    <style>
+        /* CHANGE #1 – Center everything */
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .relative-box {
+            width: 120px; height: 120px;
+            background: lightblue;
+            position: relative;
+            top: 20px; left: 20px;
+            margin: 0 auto;  /* CHANGE #2 – Center box */
+        }
+
+        .parent {
+            width: 150px; height: 150px;
+            background: peachpuff;
+            position: relative;
+            margin: 20px auto;  /* CHANGE #3 – Center parent */
+        }
+
+        .absolute-box {
+            width: 80px; height: 40px;
+            background: orange;
+            position: absolute;
+            top: 20px; left: 20px;
+        }
+
+        .z-container {
+            width: 150px; height: 150px;
+            position: relative;
+            margin: 20px auto;  /* CHANGE #4 – Center container */
+        }
+
+        .z1, .z2 {
+            width: 100px; height: 100px;
+            position: absolute;
+        }
+
+        .z1 { background: pink; top: 20px; left: 20px; z-index: 1; }
+        .z2 { background: lightgreen; top: 40px; left: 40px; z-index: 2; }
+    </style>
+</head>
+<body>
+
+<h2>1. Position Relative</h2>
+<p>- Stays in normal flow.<br>
+- Can be moved using top/left.<br>
+- Often used as reference for absolute elements.</p>
+<div class="relative-box"></div>
+
+<h2>2. Position Absolute</h2>
+<p>- Removed from normal flow.<br>
+- Positioned relative to nearest positioned parent.<br>
+- Can overlap other elements.</p>
+<div class="parent">
+    <div class="absolute-box"></div>
+</div>
+
+<h2>3. Z-Index</h2>
+<p>- Controls overlapping order.<br>
+- Higher value appears on top.<br>
+- Works only with positioned elements.</p>
+<div class="z-container">
+    <div class="z1"></div>
+    <div class="z2"></div>
+</div>
+
+</body>
+</html>

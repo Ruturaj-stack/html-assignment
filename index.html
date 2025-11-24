@@ -1,27 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Positioning Assignment</title>
+    <title>Dashboard + Positioning Assignment</title>
     <style>
-        /* CHANGE #1 – Center everything */
         body {
-            text-align: center;
-            font-family: Arial;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
         }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            background: #2c3e50;
+            color: white;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background: #34495e;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            margin-left: 220px;
+            background: #fff;
+            padding: 15px 25px;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* DASHBOARD CONTENT */
+        .content {
+            margin-left: 220px;
+            padding: 25px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        /* ORIGINAL CONTENT BELOW */
 
         .relative-box {
             width: 120px; height: 120px;
             background: lightblue;
             position: relative;
             top: 20px; left: 20px;
-            margin: 0 auto;  /* CHANGE #2 – Center box */
+            margin: 0 auto;
         }
 
         .parent {
             width: 150px; height: 150px;
             background: peachpuff;
             position: relative;
-            margin: 20px auto;  /* CHANGE #3 – Center parent */
+            margin: 20px auto;
         }
 
         .absolute-box {
@@ -34,7 +102,7 @@
         .z-container {
             width: 150px; height: 150px;
             position: relative;
-            margin: 20px auto;  /* CHANGE #4 – Center container */
+            margin: 20px auto;
         }
 
         .z1, .z2 {
@@ -44,31 +112,66 @@
 
         .z1 { background: pink; top: 20px; left: 20px; z-index: 1; }
         .z2 { background: lightgreen; top: 40px; left: 40px; z-index: 2; }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-<h2>1. Position Relative</h2>
-<p>- Stays in normal flow.<br>
-- Can be moved using top/left.<br>
-- Often used as reference for absolute elements.</p>
-<div class="relative-box"></div>
-
-<h2>2. Position Absolute</h2>
-<p>- Removed from normal flow.<br>
-- Positioned relative to nearest positioned parent.<br>
-- Can overlap other elements.</p>
-<div class="parent">
-    <div class="absolute-box"></div>
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Reports</a>
+    <a href="#">Settings</a>
 </div>
 
-<h2>3. Z-Index</h2>
-<p>- Controls overlapping order.<br>
-- Higher value appears on top.<br>
-- Works only with positioned elements.</p>
-<div class="z-container">
-    <div class="z1"></div>
-    <div class="z2"></div>
+<!-- TOP BAR -->
+<div class="topbar">
+    Welcome to Your Dashboard
+</div>
+
+<!-- DASHBOARD CONTENT -->
+<div class="content">
+
+    <!-- CARDS -->
+    <div class="cards">
+        <div class="card"><h3>Users: 120</h3></div>
+        <div class="card"><h3>Tasks: 75</h3></div>
+        <div class="card"><h3>Revenue: ₹50k</h3></div>
+    </div>
+
+    <!-- ORIGINAL CONTENT BELOW -->
+    <h2>1. Position Relative</h2>
+    <p>- Stays in normal flow.<br>
+       - Can be moved using top/left.<br>
+       - Often used as reference for absolute elements.</p>
+    <div class="relative-box"></div>
+
+    <h2>2. Position Absolute</h2>
+    <p>- Removed from normal flow.<br>
+       - Positioned relative to nearest positioned parent.<br>
+       - Can overlap other elements.</p>
+    <div class="parent">
+        <div class="absolute-box"></div>
+    </div>
+
+    <h2>3. Z-Index</h2>
+    <p>- Controls overlapping order.<br>
+       - Higher value appears on top.<br>
+       - Works only with positioned elements.</p>
+    <div class="z-container">
+        <div class="z1"></div>
+        <div class="z2"></div>
+    </div>
+
 </div>
 
 </body>
